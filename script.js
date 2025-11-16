@@ -41,7 +41,7 @@ function updateTimer(id) {
     let minutes = Math.floor((diff / (1000 * 60)) % 60);
 
     timerSpan.textContent =
-      `${hours}h ${minutes < 10 ? "0" : ""}${minutes}m avant nouveau personnage`;
+      `${hours}h ${minutes < 10 ? "0" : ""}${minutes}m avant le nouveau personnage`;
   }
 
   refresh();
@@ -136,3 +136,4 @@ toggleBtn.addEventListener("click", () => {
 
 /* --- DÉMARRAGE --- */
 loadOnePlayer();
+
