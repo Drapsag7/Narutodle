@@ -49,14 +49,14 @@ function updateTimer(id) {
 }
 
 /* --- TEMPLATE BLOC JOUEUR --- */
-function createPlayerBlock(id, index) {
+function createPlayerBlock(id, index, playerName = "Personnage du jour") {
   return `
     <div class="content-container">
       <div class="scroll-end-left">
         <span class="timer-text" id="timerText${id}"></span>
       </div>
 
-      <h2>Personnage du jour</h2>
+      <h2>${playerName}</h2>
 
       <div class="card" id="card${id}">
         <div class="image-frame">
@@ -108,8 +108,8 @@ function loadTwoPlayers() {
   const i2 = getDailyIndex(4);
 
   game.innerHTML =
-    createPlayerBlock(2, i1) +
-    createPlayerBlock(3, i2);
+    createPlayerBlock(2, i1, "KING KONG") +
+    createPlayerBlock(3, i2, "Fils Kouachi");
 
   initReveal(2, i1);
   initReveal(3, i2);
@@ -136,4 +136,5 @@ toggleBtn.addEventListener("click", () => {
 
 /* --- DÉMARRAGE --- */
 loadOnePlayer();
+
 
